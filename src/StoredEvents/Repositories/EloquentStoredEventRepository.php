@@ -66,7 +66,7 @@ class EloquentStoredEventRepository implements StoredEventRepository
         return $this->prepareEventModelQuery($startingFrom, $uuid)->count('id');
     }
 
-    public function retrieveAllAfterVersion(int $aggregateVersion, string|null $aggregateUuid): LazyCollection
+    public function retrieveAllAfterVersion(int $aggregateVersion, string|int $aggregateUuid): LazyCollection
     {
         $query = $this->getQuery()
             ->whereAggregateRoot($aggregateUuid)
