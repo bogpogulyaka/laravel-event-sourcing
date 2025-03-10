@@ -13,7 +13,7 @@ class CommandHandler
 
     private mixed $handler;
 
-    private ?string $aggregateUuid = null;
+    private string|int|null $aggregateUuid = null;
 
     public static function for(object $command): self
     {
@@ -25,7 +25,7 @@ class CommandHandler
         return $this->aggregateUuid !== null;
     }
 
-    public function aggregateUuid(): ?string
+    public function aggregateUuid(): string|int|null
     {
         return $this->aggregateUuid;
     }

@@ -64,7 +64,7 @@ class ReplayCommand extends Command
             });
     }
 
-    public function replay(Collection $projectors, int $startingFrom, ?string $aggregateUuid = null): void
+    public function replay(Collection $projectors, int $startingFrom, string|int|null $aggregateUuid = null): void
     {
         $repository = app(StoredEventRepository::class);
         $replayCount = $repository->countAllStartingFrom($startingFrom, $aggregateUuid);

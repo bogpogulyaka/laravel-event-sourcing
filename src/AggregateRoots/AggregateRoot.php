@@ -24,7 +24,7 @@ use Spatie\EventSourcing\StoredEvents\StoredEvent;
 
 abstract class AggregateRoot
 {
-    private string $uuid = '';
+    private string|int $uuid = '';
 
     private array $recordedEvents = [];
 
@@ -40,13 +40,13 @@ abstract class AggregateRoot
     private bool $handleEvents = true;
 
     /**
-     * @param string $uuid
+     * @param string|int $uuid
      *
      * Psalm needs this doc block to properly know the return type.
      *
      * @return static
      */
-    public static function retrieve(string $uuid): static
+    public static function retrieve(string|int $uuid): static
     {
         $aggregateRoot = app(static::class);
 
@@ -55,14 +55,14 @@ abstract class AggregateRoot
         return $aggregateRoot->reconstituteFromEvents();
     }
 
-    public function loadUuid(string $uuid): static
+    public function loadUuid(string|int $uuid): static
     {
         $this->uuid = $uuid;
 
         return $this->reconstituteFromEvents();
     }
 
-    public function uuid(): string
+    public function uuid(): string|int
     {
         return $this->uuid;
     }

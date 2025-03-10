@@ -9,7 +9,7 @@ class CouldNotPersistAggregate extends Exception
 {
     public static function unexpectedVersionAlreadyPersisted(
         AggregateRoot $aggregateRoot,
-        string $uuid,
+        string|int $uuid,
         int $expectedVersion,
         int $actualVersion
     ) {

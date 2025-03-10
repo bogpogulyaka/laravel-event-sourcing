@@ -36,12 +36,12 @@ abstract class ShouldBeStored
         return $this;
     }
 
-    public function aggregateRootUuid(): ?string
+    public function aggregateRootUuid(): string|int|null
     {
         return $this->metaData[MetaData::AGGREGATE_ROOT_UUID] ?? null;
     }
 
-    public function setAggregateRootUuid(string $uuid): self
+    public function setAggregateRootUuid(string|null $uuid): self
     {
         $this->metaData[MetaData::AGGREGATE_ROOT_UUID] = $uuid;
 

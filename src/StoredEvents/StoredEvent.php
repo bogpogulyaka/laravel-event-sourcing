@@ -19,7 +19,7 @@ class StoredEvent implements Arrayable
     /** @var array|string */
     public $event_properties;
 
-    public string $aggregate_uuid;
+    public string|int $aggregate_uuid;
 
     public string $aggregate_version;
 

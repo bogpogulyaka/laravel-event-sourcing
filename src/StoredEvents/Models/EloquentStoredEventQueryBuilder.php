@@ -28,7 +28,7 @@ class EloquentStoredEventQueryBuilder extends Builder
         return $this;
     }
 
-    public function whereAggregateRoot(string $uuid): self
+    public function whereAggregateRoot(string|int $uuid): self
     {
         $this->where('aggregate_uuid', $uuid);
 

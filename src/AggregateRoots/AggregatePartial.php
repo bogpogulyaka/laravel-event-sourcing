@@ -18,7 +18,7 @@ abstract class AggregatePartial
     ) {
     }
 
-    protected function aggregateRootUuid(): string
+    protected function aggregateRootUuid(): string|int
     {
         return $this->aggregateRoot->uuid();
     }

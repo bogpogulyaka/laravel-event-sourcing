@@ -6,7 +6,7 @@ class AggregateRootCommandHandler
 {
     public function __construct(
         private string $aggregateRootClass,
-        private string $aggregateUuid,
+        private string|int $aggregateUuid,
     ) {
     }
 

@@ -320,7 +320,7 @@ class Projectionist
         Collection $projectors,
         int $startingFromEventId = 0,
         ?callable $onEventReplayed = null,
-        ?string $aggregateUuid = null
+        string|int|null $aggregateUuid = null
     ): void {
         $projectors = (new EventHandlerCollection($projectors))
             ->sortBy(fn (EventHandler $eventHandler) => $eventHandler->weight ?? 0);

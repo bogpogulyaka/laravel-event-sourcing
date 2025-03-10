@@ -17,7 +17,7 @@ class EloquentSnapshotRepository implements SnapshotRepository
         }
     }
 
-    public function retrieve(string $aggregateUuid): ?Snapshot
+    public function retrieve(string|int $aggregateUuid): ?Snapshot
     {
         /** @var \Illuminate\Database\Query\Builder $query */
         $query = $this->snapshotModel::query();
