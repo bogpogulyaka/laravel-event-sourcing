@@ -1,8 +1,7 @@
 {
-    "name": "spatie/laravel-event-sourcing",
+    "name": "bogpogulyaka/laravel-event-sourcing",
     "description": "The easiest way to get started with event sourcing in Laravel",
     "keywords": [
-        "spatie",
         "laravel-event-sourcing",
         "event",
         "sourcing",
